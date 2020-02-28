@@ -1,8 +1,23 @@
+gg_trg_Melee_Initialization = nil
 function InitGlobals()
 end
 
---CUSTOM_CODE
---CUSTOM_CODE
+function Trig_Melee_Initialization_Actions()
+end
+
+function InitTrig_Melee_Initialization()
+    gg_trg_Melee_Initialization = CreateTrigger()
+    TriggerAddAction(gg_trg_Melee_Initialization, Trig_Melee_Initialization_Actions)
+end
+
+function InitCustomTriggers()
+    InitTrig_Melee_Initialization()
+end
+
+function RunInitializationTriggers()
+    ConditionalTriggerExecute(gg_trg_Melee_Initialization)
+end
+
 function InitCustomPlayerSlots()
     SetPlayerStartLocation(Player(0), 0)
     SetPlayerColor(Player(0), ConvertPlayerColor(0))
@@ -16,14 +31,16 @@ function InitCustomTeams()
 end
 
 function main()
-    SetCameraBounds(-9472.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -7680.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 9472.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 7168.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -9472.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 7168.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 9472.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -7680.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
+    SetCameraBounds(-3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3328.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 3072.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 3072.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3328.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
     NewSoundEnvironment("Default")
-    SetAmbientDaySound("VillageDay")
-    SetAmbientNightSound("VillageNight")
+    SetAmbientDaySound("LordaeronSummerDay")
+    SetAmbientNightSound("LordaeronSummerNight")
     SetMapMusic("Music", true, 0)
     InitBlizzard()
     InitGlobals()
+    InitCustomTriggers()
+    RunInitializationTriggers()
 end
 
 function config()
@@ -32,7 +49,7 @@ function config()
     SetPlayers(1)
     SetTeams(1)
     SetGamePlacement(MAP_PLACEMENT_USE_MAP_SETTINGS)
-    DefineStartLocation(0, -1152.0, -3968.0)
+    DefineStartLocation(0, -1024.0, -128.0)
     InitCustomPlayerSlots()
     SetPlayerSlotAvailable(Player(0), MAP_CONTROL_USER)
     InitGenericPlayerSlots()
