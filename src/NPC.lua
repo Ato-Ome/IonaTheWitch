@@ -97,24 +97,15 @@ do
     ---@param fraction string
     ---@param name string
     function CreateNPC(player, x, y, sex, age, class, fraction, name)
-        print("Create NPC Funtion Executed")
         local unit = CreateUnit(player, NPC.BaseUnit, x, y, 0)
         local id = GetHandleId(unit)
-        print("UnitCreated")
         CharacterSet(id)
-        print("Caracter Set")
         local data = NPC[id]
-        print("Data = NPCUnit")
         data.Sex[sex] = true
-        print("Age = true")
         data.Age[age] = true
-        print("Age = true")
         data.Fraction[fraction] = true
-        print("Fraction = true")
         data.Name = name
-        print(name)
         data.Class[class].Status = true
-        print("Status = true")
         BlzSetUnitSkin(unit, data.Class[class].Skin[sex][age])
         BlzSetUnitName(unit, name)
     end
