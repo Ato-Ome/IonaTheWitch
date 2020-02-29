@@ -9,8 +9,7 @@ do
         print("Char Set Func Starter")
         NPC[id] = {
             State = { PathFind = false; Walk = false; Busy = false; Idle = false; Attack = false; Sleep = false; Death = false; },
-            Fraction = { Aggressive = false; Negative = false; Neutral = false; Positive = false; Friendly = false },
-            Name = "",
+            Faction = { Aggressive = false; Negative = false; Neutral = false; Positive = false; Friendly = false },
             Sex = { Male = false; Female = false },
             Age = { Child = false; Adult = false; Old = false },
             Class = {
@@ -20,9 +19,9 @@ do
                         Male = { Child = FourCC('nass'); Adult = FourCC('nass'); Old = FourCC('nass') },
                         Female = { Child = FourCC('nass'); Adult = FourCC('nass'); Old = FourCC('nass')}
                     },
-                    SunName = {
-                        Male = { Child = ""; Adult = ""; Old = "" },
-                        Female = { Child = ""; Adult = ""; Old = "" }
+                    Name = {
+                        Male = { Child = "Маленький убийца"; Adult = "Взрослый убийца"; Old = "Пожилой убийца" },
+                        Female = { Child = "Маленькая убийца"; Adult = "Взрослая убийца"; Old = "Пожилая убийца" }
                     },
                     Damage = {
                         Male = {Child = 0; Adult = 0; Old = 0};
@@ -37,6 +36,10 @@ do
                         Female = {Child = 0; Adult = 0; Old = 0}
                     },
                     Range = {
+                        Male = {Child = 0; Adult = 0; Old = 0};
+                        Female = {Child = 0; Adult = 0; Old = 0}
+                    },
+                    MoveSpeed = {
                         Male = {Child = 0; Adult = 0; Old = 0};
                         Female = {Child = 0; Adult = 0; Old = 0}
                     },
@@ -94,19 +97,19 @@ do
     ---@param sex string
     ---@param age string
     ---@param class string
-    ---@param fraction string
+    ---@param faction string
     ---@param name string
-    function CreateNPC(player, x, y, sex, age, class, fraction, name)
+    function CreateNPC(player, x, y, sex, age, class, faction, name)
         local unit = CreateUnit(player, NPC.BaseUnit, x, y, 0)
         local id = GetHandleId(unit)
         CharacterSet(id)
         local data = NPC[id]
         data.Sex[sex] = true
         data.Age[age] = true
-        data.Fraction[fraction] = true
+        data.Faction[faction] = true
         data.Name = name
         data.Class[class].Status = true
         BlzSetUnitSkin(unit, data.Class[class].Skin[sex][age])
-        BlzSetUnitName(unit, name)
+        BlzSetUnitName(unit, data.Class[class].Name[sex][age])
     end
 end
