@@ -3,5 +3,5 @@ require 'build' {
 	project = nil,
 	map = 'map.w3x',
 	src = 'src',
-	run = 'game'
+	run = 'editor'
 }
