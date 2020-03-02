@@ -135,5 +135,5 @@ do
         CreateNPC(Player(0), 0, 0, sex[GetRandomInt(1,2)], age[GetRandomInt(1,3)], "Assassin", "Neutral", "Jack")
     end
 
-    TimerStart(CreateTimer(), 0.5, true, RandomNPC)
+    TimerStart(CreateTimer(), 1, true, RandomNPC)
 end
