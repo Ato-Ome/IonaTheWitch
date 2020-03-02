@@ -1,9 +1,6 @@
+NPC = {}
+NPC.BaseUnit = FourCC('hfoo')
 do
-    function InitGlobals()
-        NPC = {}
-        NPC.BaseUnit = FourCC('hfoo')
-    end
-
     ---@param id integer
     function CharacterSet(id)
         NPC[id] = {
@@ -134,6 +131,4 @@ do
         }
         CreateNPC(Player(0), 0, 0, sex[GetRandomInt(1,2)], age[GetRandomInt(1,3)], "Assassin", "Neutral", "Jack")
     end
-
-    TimerStart(CreateTimer(), 1, true, RandomNPC)
 end
