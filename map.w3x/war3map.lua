@@ -10,7 +10,7 @@ function CreateCameras()
     CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
     CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ROTATION, 90.0, 0.0)
     CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ANGLE_OF_ATTACK, 304.0, 0.0)
-    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_TARGET_DISTANCE, 4707.6, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_TARGET_DISTANCE, 2415.8, 0.0)
     CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ROLL, 0.0, 0.0)
     CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
     CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_FARZ, 10000.0, 0.0)
@@ -160,7 +160,6 @@ do
     end
 
     TimerStart(CreateTimer(), 1, true, RandomNPC)
-	print("NPC Random Loaded")
 end
 do
     Weather = {
@@ -221,34 +220,22 @@ do
 
     function WeatherSystem()
         local currenttype = Weather.Current.Type
-        print("Currenttype"..currenttype)
         local currenttime = Weather.Current.Time
-        print("Currenttime"..currenttime)
         local nexttime = Weather.Current.Time + 6
-        print("nextime"..nexttime)
         local currentdaycycle = Weather.DayCycle[currenttime]
-        print("current daycycle"..currentdaycycle)
         local nextdaycycle  = Weather.DayCycle[nexttime]
-        print("next daycycle"..nextdaycycle)
         local progress = (GetTimeOfDay() - currenttime) / (nexttime - currenttime)
-        print("progress"..progress)
         local red =  Weather.Type[currenttype][currentdaycycle].Fog.Color.Red + (Weather.Type[currenttype][nextdaycycle].Fog.Color.Red - Weather.Type[currenttype][currentdaycycle].Fog.Color.Red) * progress
-        print("red"..red)
         local green =  Weather.Type[currenttype][currentdaycycle].Fog.Color.Green + (Weather.Type[currenttype][nextdaycycle].Fog.Color.Green - Weather.Type[currenttype][currentdaycycle].Fog.Color.Green) * progress
-        print("green"..green)
         local blue =  Weather.Type[currenttype][currentdaycycle].Fog.Color.Blue + (Weather.Type[currenttype][nextdaycycle].Fog.Color.Blue - Weather.Type[currenttype][currentdaycycle].Fog.Color.Blue) * progress
-        print("blue"..blue)
         local fogstart =  Weather.Type[currenttype][currentdaycycle].Fog.Start + (Weather.Type[currenttype][nextdaycycle].Fog.Start - Weather.Type[currenttype][currentdaycycle].Fog.Start) * progress
-        print("fogstart"..fogstart)
         local fogend =  Weather.Type[currenttype][currentdaycycle].Fog.End + (Weather.Type[currenttype][nextdaycycle].Fog.End - Weather.Type[currenttype][currentdaycycle].Fog.End) * progress
-        print("fogend"..fogend)
-        SetTerrainFogEx(0,fogstart,fogend,0.5,red,green,blue)
-        print("fog seted")
+        SetTerrainFogEx(0, fogstart, fogend,0.5, red, green, blue)
     end
 end
+--CUSTOM_CODE
 function Trig_Periodic_Actions()
         WeatherSystem()
-        print("Periodic")
 end
 
 function InitTrig_Periodic()
