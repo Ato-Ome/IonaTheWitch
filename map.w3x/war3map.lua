@@ -1,9 +1,25 @@
 gg_trg_Melee_Initialization = nil
+gg_trg_TimeOfDay = nil
+gg_cam_Camera_001 = nil
 function InitGlobals()
 end
 
---CUSTOM_CODE
-do
+function CreateCameras()
+    gg_cam_Camera_001 = CreateCameraSetup()
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ROTATION, 90.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ANGLE_OF_ATTACK, 304.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_TARGET_DISTANCE, 4707.6, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_FARZ, 10000.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_NEARZ, 16.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_LOCAL_PITCH, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_LOCAL_YAW, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_LOCAL_ROLL, 0.0, 0.0)
+    CameraSetupSetDestPosition(gg_cam_Camera_001, -436.0, -130.5, 0.0)
+end
+
     function InitGlobals()
         NPC = {}
         NPC.BaseUnit = FourCC('hfoo')
@@ -139,88 +155,84 @@ do
         }
         CreateNPC(Player(0), 0, 0, sex[GetRandomInt(1,2)], age[GetRandomInt(1,3)], "Assassin", "Neutral", "Jack")
     end
+    Weather = {
+        Type = {
+            Sunny = {
+                Morning = {
+                    Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 8500 }
+                },
+                Day = {
+                    Fog = { Color = {Red = 1; Green = 1; Blue = 0;}, Start = 1500; End = 10000 }
+                },
+                Evening = {
+                    Fog = { Color = {Red = 0.85; Green = 0.35; Blue = 0.2;}, Start = 1000; End = 8500 }
+                },
+                Night = {
+                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 800; End = 7500 }
+                }
+            },
+            Rainy = {
+                Morning = {
+                    Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 800; End = 6500 }
+                },
+                Day = {
+                    Fog = { Color = {Red = 0.7; Green = 0.7; Blue = 0.7;}, Start = 900; End = 7500 }
+                },
+                Evening = {
+                    Fog = { Color = {Red = 0.6; Green = 0.35; Blue = 0.2;}, Start = 900; End = 7500 }
+                },
+                Night = {
+                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 700; End = 6500 }
+                }
+            },
+            Snowy ={
 
-    TimerStart(CreateTimer(), 0.5, true, RandomNPC)
-end
-Weather = {
-    Type = {
-        Sunny = {
-            Morning = {
-                Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 8500 }
             },
-            Day = {
-                Fog = { Color = {Red = 1; Green = 1; Blue = 0;}, Start = 1500; End = 10000 }
+            Windy = {
+
             },
-            Evening = {
-                Fog = { Color = {Red = 0.85; Green = 0.35; Blue = 0.2;}, Start = 1000; End = 8500 }
+            Cloudy = {
+
             },
-            Night = {
-                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 800; End = 7500 }
+            Foggy = {
+
             }
         },
-        Rainy = {
-            Morning = {
-                Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 800; End = 6500 }
-            },
-            Day = {
-                Fog = { Color = {Red = 0.7; Green = 0.7; Blue = 0.7;}, Start = 900; End = 7500 }
-            },
-            Evening = {
-                Fog = { Color = {Red = 0.6; Green = 0.35; Blue = 0.2;}, Start = 900; End = 7500 }
-            },
-            Night = {
-                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 700; End = 6500 }
-            }
+        DayCycle = {
+            [6] = "Morning";
+            [12] = "Day";
+            [18] = "Evening";
+            [24] = "Night";
+            [0] = "Night"
         },
-        Snowy ={
-
-        },
-        Windy = {
-
-        },
-        Cloudy = {
-
-        },
-        Foggy = {
-
+        Current = {
+            Type = "Sunny";
+            Time = 6;
         }
-    },
-    DayCycle = {
-        [6] = "Morning";
-        [12] = "Day";
-        [18] = "Evening";
-        [24] = "Night";
-        [0] = "Night"
-    },
-    Current = {
-        Type = "Sunny";
-        Time = 6;
     }
-}
 
-function WeatherSystem()
-    local currenttype = Weather.Current.Type
-    local currenttime = Weather.Current.Time
-    local nexttime = Weather.Current.Time + 6
-    local currentdaycycle = Weather.DayCycle[currenttime]
-    local nextdaycycle  = Weather.DayCycle[nexttime]
-    local progress = ( nexttime - currenttime ) / ( nexttime - GetTimeOfDay() )
-    local current = Weather.Type[currenttype][currentdaycycle]
-    local next = Weather.Type[currenttype][nextdaycycle].Fog.Color.Red
-    local red = ( next.Fog.Color.Red - current.Fog.Color.Red) * progress
-    local green = ( next.Fog.Color.Green - current.Fog.Color.Green) * progress
-    local blue = ( next.Fog.Color.Blue - current.Fog.Color.Blue) * progress
-    local fogstart = ( next.Fog.Start - current.Fog.Start) * progress
-    local fogend = ( next.Fog.End - current.Fog.End) * progress
+    function WeatherSystem()
+        local currenttype = Weather.Current.Type
+        local currenttime = Weather.Current.Time
+        local nexttime = Weather.Current.Time + 6
+        local currentdaycycle = Weather.DayCycle[currenttime]
+        local nextdaycycle  = Weather.DayCycle[nexttime]
+        local progress = ( nexttime - currenttime ) / ( nexttime - GetTimeOfDay() )
+        local current = Weather.Type[currenttype][currentdaycycle]
+        local next = Weather.Type[currenttype][nextdaycycle].Fog.Color.Red
+        local red = ( next.Fog.Color.Red - current.Fog.Color.Red) * progress
+        local green = ( next.Fog.Color.Green - current.Fog.Color.Green) * progress
+        local blue = ( next.Fog.Color.Blue - current.Fog.Color.Blue) * progress
+        local fogstart = ( next.Fog.Start - current.Fog.Start) * progress
+        local fogend = ( next.Fog.End - current.Fog.End) * progress
 
-    SetTerrainFogEx(0,fogstart,fogend,0.5,red,green,blue)
-end
-
-TimerStart(CreateTimer(),0.05,true, WeatherSystem())
-
---CUSTOM_CODE
+        SetTerrainFogEx(0,fogstart,fogend,0.5,red,green,blue)
+    end
 function Trig_Melee_Initialization_Actions()
+    CameraSetupApplyForPlayer(true, gg_cam_Camera_001, Player(0), 0)
     CreateFogModifierRectBJ(true, Player(0), FOG_OF_WAR_VISIBLE, GetPlayableMapRect())
+        SetTimeOfDay(6)
+        TimerStart(CreateTimer(),0.05,true, WeatherSystem())
 end
 
 function InitTrig_Melee_Initialization()
@@ -228,8 +240,23 @@ function InitTrig_Melee_Initialization()
     TriggerAddAction(gg_trg_Melee_Initialization, Trig_Melee_Initialization_Actions)
 end
 
+function Trig_TimeOfDay_Actions()
+        Weather.Current.Time = GetTimeOfDay()
+end
+
+function InitTrig_TimeOfDay()
+    gg_trg_TimeOfDay = CreateTrigger()
+    TriggerRegisterGameStateEventTimeOfDay(gg_trg_TimeOfDay, EQUAL, 0.00)
+    TriggerRegisterGameStateEventTimeOfDay(gg_trg_TimeOfDay, EQUAL, 6.00)
+    TriggerRegisterGameStateEventTimeOfDay(gg_trg_TimeOfDay, EQUAL, 12.00)
+    TriggerRegisterGameStateEventTimeOfDay(gg_trg_TimeOfDay, EQUAL, 18.00)
+    TriggerRegisterGameStateEventTimeOfDay(gg_trg_TimeOfDay, EQUAL, 24.00)
+    TriggerAddAction(gg_trg_TimeOfDay, Trig_TimeOfDay_Actions)
+end
+
 function InitCustomTriggers()
     InitTrig_Melee_Initialization()
+    InitTrig_TimeOfDay()
 end
 
 function RunInitializationTriggers()
@@ -251,10 +278,12 @@ end
 function main()
     SetCameraBounds(-3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 3328.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 3072.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -3328.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 3072.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 3328.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -3584.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
+    SetTerrainFogEx(0, 500.0, 8000.0, 1.000, 1.000, 0.000, 0.000)
     NewSoundEnvironment("Default")
     SetAmbientDaySound("LordaeronSummerDay")
     SetAmbientNightSound("LordaeronSummerNight")
     SetMapMusic("Music", true, 0)
+    CreateCameras()
     InitBlizzard()
     InitGlobals()
     InitCustomTriggers()
