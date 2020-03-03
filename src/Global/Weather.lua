@@ -1,131 +1,131 @@
-do
-    Weather = {
-        Type = {
-            [1] = "Sunny",
-            [2] = "Rainy",
-            [3] = "Snowy",
-            [4] = "Windy",
-            [5] = "Cloudy",
-            [6] = "Foggy",
-            Sunny = {
-                Morning = {
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 4500 }
-                },
-                Day = {
-                    EffectId = FourCC('LRaa'),
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 0;}, Start = 1500; End = 5000 }
-                },
-                Evening = {
-                    EffectId = FourCC('LRaa'),
-                    Fog = { Color = {Red = 0.85; Green = 0.35; Blue = 0.2;}, Start = 1000; End = 4000 }
-                },
-                Night = {
-                    EffectId = FourCC('LRma'),
-                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 500; End = 3000 }
-                }
+Weather = {
+    Type = {
+        [1] = "Sunny",
+        [2] = "Rainy",
+        [3] = "Snowy",
+        [4] = "Windy",
+        [5] = "Cloudy",
+        [6] = "Foggy",
+        Sunny = {
+            Morning = {
+                Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 4500 }
             },
-            Rainy = {
-                Morning = {
-                    EffectId = FourCC('RLlr'),
-                    Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 500; End = 3500 }
-                },
-                Day = {
-                    EffectId = FourCC('RLhr'),
-                    Fog = { Color = {Red = 0.7; Green = 0.7; Blue = 0.7;}, Start = 1000; End = 4000 }
-                },
-                Evening = {
-                    EffectId = FourCC('RLlr'),
-                    Fog = { Color = {Red = 0.6; Green = 0.35; Blue = 0.2;}, Start = 500; End = 3000 }
-                },
-                Night = {
-                    EffectId = FourCC('RLhr'),
-                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 0; End = 2000 }
-                }
+            Day = {
+                EffectId = FourCC('LRaa'),
+                Fog = { Color = {Red = 1; Green = 1; Blue = 0;}, Start = 1500; End = 5000 }
             },
-            Snowy = {
-                Morning = {
-                    EffectId = FourCC('SNls'),
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 4000 }
-                },
-                Day = {
-                    EffectId = FourCC('SNhs'),
-                    Fog = { Color = {Red = 0.8; Green = 0.8; Blue = 0.8;}, Start = 500; End = 3500 }
-                },
-                Evening = {
-                    EffectId = FourCC('SNhs'),
-                    Fog = { Color = {Red = 0.8; Green = 0.5; Blue = 0.4;}, Start = 500; End = 3000 }
-                },
-                Night = {
-                    EffectId = FourCC('SNls'),
-                    Fog = { Color = {Red = 0.4; Green = 0.2; Blue = 0.4;}, Start = 0; End = 2000 }
-                }
+            Evening = {
+                EffectId = FourCC('LRaa'),
+                Fog = { Color = {Red = 0.85; Green = 0.35; Blue = 0.2;}, Start = 1000; End = 4000 }
             },
-            Windy = {
-                Morning = {
-                    EffectId = FourCC('WOlw'),
-                    Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 500; End = 3500 }
-                },
-                Day = {
-                    EffectId = FourCC('WOhw'),
-                    Fog = { Color = {Red = 0.7; Green = 0.7; Blue = 0.7;}, Start = 1000; End = 4000 }
-                },
-                Evening = {
-                    EffectId = FourCC('WOhw'),
-                    Fog = { Color = {Red = 0.6; Green = 0.35; Blue = 0.2;}, Start = 500; End = 3000 }
-                },
-                Night = {
-                    EffectId = FourCC('WOlw'),
-                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 0; End = 2000 }
-                }
-            },
-            Cloudy = {
-                Morning = {
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 3000 }
-                },
-                Day = {
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 0.5;}, Start = 1500; End = 4500 }
-                },
-                Evening = {
-                    Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 1000; End = 3500 }
-                },
-                Night = {
-                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 500; End = 4000 }
-                }
-            },
-            Foggy = {
-                Morning = {
-                    EffectId = FourCC('FDwh'),
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 0; End = 2000 }
-                },
-                Day = {
-                    EffectId = FourCC('FDwl'),
-                    Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 0; End = 2500 }
-                },
-                Evening = {
-                    EffectId = FourCC('FDwl'),
-                    Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 1000; End = 3500 }
-                },
-                Night = {
-                    EffectId = FourCC('FDbl'),
-                    Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 500; End = 4000 }
-                }
+            Night = {
+                EffectId = FourCC('LRma'),
+                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 500; End = 3000 }
             }
         },
-        DayCycle = {
-            [6] = "Morning",
-            [30] = "Morning",
-            [12] = "Day",
-            [18] = "Evening",
-            [-6] = "Evening",
-            [24] = "Night",
-            [0] = "Night"
+        Rainy = {
+            Morning = {
+                EffectId = FourCC('RLlr'),
+                Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 500; End = 3500 }
+            },
+            Day = {
+                EffectId = FourCC('RLhr'),
+                Fog = { Color = {Red = 0.7; Green = 0.7; Blue = 0.7;}, Start = 1000; End = 4000 }
+            },
+            Evening = {
+                EffectId = FourCC('RLlr'),
+                Fog = { Color = {Red = 0.6; Green = 0.35; Blue = 0.2;}, Start = 500; End = 3000 }
+            },
+            Night = {
+                EffectId = FourCC('RLhr'),
+                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 0; End = 2000 }
+            }
         },
-        Current = {
-            Type = "Sunny",
-            Time = 6
+        Snowy = {
+            Morning = {
+                EffectId = FourCC('SNls'),
+                Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 4000 }
+            },
+            Day = {
+                EffectId = FourCC('SNhs'),
+                Fog = { Color = {Red = 0.8; Green = 0.8; Blue = 0.8;}, Start = 500; End = 3500 }
+            },
+            Evening = {
+                EffectId = FourCC('SNhs'),
+                Fog = { Color = {Red = 0.8; Green = 0.5; Blue = 0.4;}, Start = 500; End = 3000 }
+            },
+            Night = {
+                EffectId = FourCC('SNls'),
+                Fog = { Color = {Red = 0.4; Green = 0.2; Blue = 0.4;}, Start = 0; End = 2000 }
+            }
+        },
+        Windy = {
+            Morning = {
+                EffectId = FourCC('WOlw'),
+                Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 500; End = 3500 }
+            },
+            Day = {
+                EffectId = FourCC('WOhw'),
+                Fog = { Color = {Red = 0.7; Green = 0.7; Blue = 0.7;}, Start = 1000; End = 4000 }
+            },
+            Evening = {
+                EffectId = FourCC('WOhw'),
+                Fog = { Color = {Red = 0.6; Green = 0.35; Blue = 0.2;}, Start = 500; End = 3000 }
+            },
+            Night = {
+                EffectId = FourCC('WOlw'),
+                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 0; End = 2000 }
+            }
+        },
+        Cloudy = {
+            Morning = {
+                Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 1000; End = 3000 }
+            },
+            Day = {
+                Fog = { Color = {Red = 1; Green = 1; Blue = 0.5;}, Start = 1500; End = 4500 }
+            },
+            Evening = {
+                Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 1000; End = 3500 }
+            },
+            Night = {
+                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 500; End = 4000 }
+            }
+        },
+        Foggy = {
+            Morning = {
+                EffectId = FourCC('FDwh'),
+                Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 0; End = 2000 }
+            },
+            Day = {
+                EffectId = FourCC('FDwl'),
+                Fog = { Color = {Red = 1; Green = 1; Blue = 1;}, Start = 0; End = 2500 }
+            },
+            Evening = {
+                EffectId = FourCC('FDwl'),
+                Fog = { Color = {Red = 0.5; Green = 0.5; Blue = 0.5;}, Start = 1000; End = 3500 }
+            },
+            Night = {
+                EffectId = FourCC('FDbl'),
+                Fog = { Color = {Red = 0.3; Green = 0; Blue = 0.4;}, Start = 500; End = 4000 }
+            }
         }
+    },
+    DayCycle = {
+        [6] = "Morning",
+        [30] = "Morning",
+        [12] = "Day",
+        [18] = "Evening",
+        [-6] = "Evening",
+        [24] = "Night",
+        [0] = "Night"
+    },
+    Current = {
+        Type = "Sunny",
+        Time = 6
     }
+}
 
+do
     function WeatherSystem()
         local currenttype = Weather.Current.Type
         local currenttime = Weather.Current.Time
