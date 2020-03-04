@@ -222,7 +222,6 @@ do
                 end
             end
         end
-        SetUnitAcquireRange(stateunit, GetUnitRealField(stateunit, UNIT_RF_SIGHT_RADIUS))
     end
 
     ---@return boolexpr
