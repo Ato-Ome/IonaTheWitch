@@ -148,6 +148,7 @@ do
         data.Faction[faction] = true
         data.Attitude[attitude] = true
         data.Class[class].Status = true
+        data.Current.State = "Idle"
         BlzSetUnitSkin(unit, data.Class[class].Skin[sex][age])
         BlzSetUnitName(unit, data.Class[class].Name[sex][age])
         BlzSetUnitMaxHP(unit, data.Class[class].HP[sex][age])
