@@ -1,3 +1,4 @@
+gg_cam_Camera_001 = nil
 gg_trg_Periodic = nil
 gg_trg_Melee_Initialization = nil
 gg_trg_TimeOfDay = nil
@@ -11,6 +12,54 @@ function CreateUnitsForPlayer0()
     local t
     local life
     u = BlzCreateUnitWithSkin(p, FourCC("Hjai"), 571.2, -254.5, 61.877, FourCC("Hjai"))
+    u = BlzCreateUnitWithSkin(p, FourCC("ndog"), 3601.4, 2262.5, -70.872, FourCC("ndog"))
+    u = BlzCreateUnitWithSkin(p, FourCC("ndog"), 4847.1, 1850.5, 217.065, FourCC("ndog"))
+    u = BlzCreateUnitWithSkin(p, FourCC("ndog"), 4386.4, 3503.9, -86.426, FourCC("ndog"))
+end
+
+function CreateNeutralPassive()
+    local p = Player(PLAYER_NEUTRAL_PASSIVE)
+    local u
+    local unitID
+    local t
+    local life
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 5047.2, 1324.0, -59.982, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 5159.5, 1232.8, 8.332, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 5159.6, 3103.5, 9.965, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 5283.9, 1348.7, 21.041, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("npig"), 5267.4, 1218.8, 244.398, FourCC("npig"))
+    u = BlzCreateUnitWithSkin(p, FourCC("necr"), 5102.1, 3296.7, 257.253, FourCC("necr"))
+    u = BlzCreateUnitWithSkin(p, FourCC("necr"), 5087.1, 2950.7, 6.604, FourCC("necr"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 4958.1, 3381.4, 269.687, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 5115.6, 3038.3, 100.445, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 5032.8, 3310.5, 26.643, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 4437.4, 3878.8, 114.020, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("necr"), 4718.0, 3719.0, 248.387, FourCC("necr"))
+    u = BlzCreateUnitWithSkin(p, FourCC("necr"), 4635.2, 3935.1, 164.361, FourCC("necr"))
+    u = BlzCreateUnitWithSkin(p, FourCC("npig"), 3864.7, 3625.8, 230.526, FourCC("npig"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 4098.3, 3759.8, 336.653, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 3936.7, 3489.6, 176.399, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("npig"), 4129.4, 3664.3, 257.534, FourCC("npig"))
+    u = BlzCreateUnitWithSkin(p, FourCC("npig"), 3981.1, 3632.4, -53.915, FourCC("npig"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 4663.8, 3758.5, 39.658, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 4658.8, 3633.8, 115.833, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("npig"), -750.4, 3068.2, 354.957, FourCC("npig"))
+    u = BlzCreateUnitWithSkin(p, FourCC("npig"), 352.0, 3867.0, -65.430, FourCC("npig"))
+    u = BlzCreateUnitWithSkin(p, FourCC("necr"), -392.3, 3444.2, 127.995, FourCC("necr"))
+    u = BlzCreateUnitWithSkin(p, FourCC("necr"), 743.2, 3630.9, 188.781, FourCC("necr"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nder"), 1355.3, 1562.3, -83.981, FourCC("nder"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nder"), 1930.3, 410.7, 57.328, FourCC("nder"))
+    u = BlzCreateUnitWithSkin(p, FourCC("ndog"), -599.5, 3203.7, -55.739, FourCC("ndog"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nrac"), 2322.0, -160.4, 148.353, FourCC("nrac"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nder"), 3563.2, -141.5, 86.428, FourCC("nder"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 678.7, 444.3, 325.996, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 1269.5, 264.4, 305.693, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), 980.1, 12.8, 170.788, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 611.9, -5.0, -20.955, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nech"), -78.8, -762.2, 30.047, FourCC("nech"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 746.9, 421.3, 23.025, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("nshe"), 1266.7, 97.7, 144.910, FourCC("nshe"))
+    u = BlzCreateUnitWithSkin(p, FourCC("ndog"), 4185.0, 679.1, -79.568, FourCC("ndog"))
 end
 
 function CreatePlayerBuildings()
@@ -22,19 +71,35 @@ end
 
 function CreateAllUnits()
     CreatePlayerBuildings()
+    CreateNeutralPassive()
     CreatePlayerUnits()
 end
 
---CUSTOM_CODE
+function CreateCameras()
+    gg_cam_Camera_001 = CreateCameraSetup()
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ZOFFSET, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ROTATION, 62.9, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ANGLE_OF_ATTACK, 328.1, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_TARGET_DISTANCE, 1815.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_ROLL, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_FIELD_OF_VIEW, 70.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_FARZ, 10000.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_NEARZ, 16.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_LOCAL_PITCH, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_LOCAL_YAW, 0.0, 0.0)
+    CameraSetupSetField(gg_cam_Camera_001, CAMERA_FIELD_LOCAL_ROLL, 0.0, 0.0)
+    CameraSetupSetDestPosition(gg_cam_Camera_001, 41.8, 3344.3, 0.0)
+end
 
+--CUSTOM_CODE
 Group = CreateGroup()
 NPC = {}
 NPC.BaseUnit = FourCC('hfoo')
-State = { Trigger = { Create = CreateTrigger() } }
-Group = {
-    Ally = CreateGroup(),
-    Enemy = CreateGroup()
+Group = CreateGroup()
+RegisterInRange = {
+    Trigger = CreateTrigger()
 }
+
 do
     ---@param id integer
     function CharacterSet(id)
@@ -42,27 +107,24 @@ do
             State = {
                 Previous = "previous",
                 Current = "current",
-                Next = "next",
-                PathFind = false,
-                Walk = false,
-                Dialogue = false,
-                Escape = false,
-                Busy = false,
-                Work = false,
-                Idle = false,
-                Attack = false,
-                Sleep = false,
-                Death = false,
+                Next = "next"
             },
-            Attitude = { Aggressive = false, Negative = false, Neutral = false, Positive = false, Friendly = false, },
-            Faction = { Bandit = false, Inquisition = false, Army = false, Player = false, Villagers = false, },
-            Sex = { Male = false, Female = false },
-            Age = { Child = false, Adult = false, Old = false },
-            Class = {
+            Attitude = "",--{ Aggressive = false, Negative = false, Neutral = false, Positive = false, Friendly = false, },
+            Faction = "",
+            Sex = "",
+            Age = "",
+            Class = "",
+            Default = {
+                Attitude = "Neutral",
+                State = "Idle",
+                Sex = "Male",
+                Age = "Adult"
+            },
+            Classes = {
                 Assassin = {
                     Default = {
-                       Faction =  "Bandit",
-                       Attitude = "Aggressive"
+                        Faction =  "Bandit",
+                        Attitude = "Aggressive"
                     },
                     Status = false,
                     Skin = {
@@ -117,14 +179,6 @@ do
                         Child = 1, Adult = 2, Old = 3
                     }
                 }
-            },
-            Current = {
-                Attitude = "Neutral",
-                State = "Idle",
-                Faction = "",
-                Sex = "",
-                Age = "",
-                Class = ""
             }
         }
     end
@@ -141,23 +195,23 @@ do
         local id = GetHandleId(unit)
         CharacterSet(id)
         local data = NPC[id]
-        local faction = NPC[id].Class[class].Default.Faction
-        local attitude = NPC[id].Class[class].Default.Attitude
-        data.Sex[sex] = true
-        data.Age[age] = true
-        data.Faction[faction] = true
-        data.Attitude[attitude] = true
-        data.Class[class].Status = true
-        data.Current.State = "Idle"
-        BlzSetUnitSkin(unit, data.Class[class].Skin[sex][age])
-        BlzSetUnitName(unit, data.Class[class].Name[sex][age])
-        BlzSetUnitMaxHP(unit, data.Class[class].HP[sex][age])
+        local faction = NPC[id].Classes[class].Default.Faction
+        local attitude = NPC[id].Classes[class].Default.Attitude
+        data.Sex = sex
+        data.Age = age
+        data.Faction = faction
+        data.Attitude = attitude
+        data.Class = class
+        data.State.Current = "Idle"
+        BlzSetUnitSkin(unit, data.Classes[class].Skin[sex][age])
+        BlzSetUnitName(unit, data.Classes[class].Name[sex][age])
+        BlzSetUnitMaxHP(unit, data.Classes[class].HP[sex][age])
         SetUnitState(unit, UNIT_STATE_LIFE, GetUnitState(unit, UNIT_STATE_MAX_LIFE))
-        BlzSetUnitMaxMana(unit, data.Class[class].MP[sex][age])
+        BlzSetUnitMaxMana(unit, data.Classes[class].MP[sex][age])
         SetUnitState(unit, UNIT_STATE_MANA, GetUnitState(unit, UNIT_STATE_MAX_MANA))
-        BlzSetUnitAttackCooldown(unit, data.Class[class].AttackRate[sex][age], 0)
-        BlzSetUnitArmor(unit, data.Class[class].Defence[sex][age])
-        BlzSetUnitBaseDamage(unit, data.Class[class].Damage[sex][age],0)
+        BlzSetUnitAttackCooldown(unit, data.Classes[class].AttackRate[sex][age], 0)
+        BlzSetUnitArmor(unit, data.Classes[class].Defence[sex][age])
+        BlzSetUnitBaseDamage(unit, data.Classes[class].Damage[sex][age],0)
     end
 
     function RandomNPC()
@@ -193,79 +247,102 @@ do
             [20] = "Monk",
             [21] = "Rifleman",
             [22] = "Traveller",
-            [23] = "Villager",
+            [23] = "Villager"
         }
         CreateNPC(Player(0), 0, 0, sex[GetRandomInt(1,2)], age[GetRandomInt(1,3)], class[GetRandomInt(1,23)], "Jack")
     end
 
-    ---@param faction string
+
     ---@return boolexpr
-    function NPCStateAttackEnumAllyFilter(faction)
-        return NPC[GetHandleId(GetEnumUnit())].Faction[faction]  and not NPC[GetHandleId(GetEnumUnit())].Attitude.Aggressive
+    function AllyFilter()
+        return NPC[GetFilterUnit()].Faction == "Guard" or GetOwningPlayer(GetFilterUnit()) == Player(0) or NPC[GetFilterUnit()].Attitude == "Friendly"
     end
 
-    ---@param faction string
     ---@return boolexpr
-    function NPCStateAttackEnumEnemyFilter(faction)
-        return NPC[GetHandleId(GetEnumUnit())].Faction[faction] and NPC[GetHandleId(GetEnumUnit())].Attitude.Aggressive
+    function EnemyFilter()
+        return NPC[GetTriggerUnit()].Faction == NPC[GetFilterUnit()].Faction and NPC[GetFilterUnit()].Attitude == "Aggression"
     end
 
-    ---@param unit unit
-    function NPCStateActions(unit)
-        local group = {enemy = CreateGroup(), ally = CreateGroup()}
-        local faction = NPC[unit].Current.Faction
-        local stateunit = GetTriggerUnit()
+    function RegisterUnitInRangeActions()
+        local unit = GetTriggerUnit()
+        local x = GetUnitX(unit)
+        local y = GetUnitY(unit)
+        local group = {
+            enemy = CreateGroup(),
+            ally = CreateGroup()
+        }
         local firstofgroup
-        local unit = { life = {enemy = 0, ally = 0}, damage = {enemy = 0, ally = 0}, attackrate = {enemy = 0, ally = 0}, armor = {enemy = 0, ally = 0} }
+        local unitstats = {
+            life = {enemy = 0, ally = 0},
+            damage = {enemy = 0, ally = 0},
+            attackrate = {enemy = 0, ally = 0},
+            armor = {enemy = 0, ally = 0}
+        }
         local power = {enemy = 0, ally = 0 , result = 0}
-        local x = GetUnitX(stateunit)
-        local y = GetUnitX(stateunit)
-        local x1 = GetUnitX(unit)
-        local y1 = GetUnitX(unit)
-        if NPC[stateunit].Current.Attitude.Aggressive then
-            GroupEnumUnitsInRange(group.enemy, x, y, GetUnitRealField(stateunit,UNIT_RF_SIGHT_RADIUS), NPCStateAttackEnumEnemyFilter(faction))
+
+        if NPC[unit].Attitude == "Aggressive" then
+            GroupEnumUnitsInRange(group.enemy, x, y, BlzGetUnitRealField(unit,UNIT_RF_SIGHT_RADIUS), EnemyFilter())
             for i = 1, CountUnitsInGroup(group.enemy) do
                 firstofgroup = FirstOfGroup(group.enemy)
-                unit.life.enemy = unit.life.enemy + GetUnitState(firstofgroup, UNIT_STATE_MAX_LIFE)
-                unit.damage.enemy  = unit.damage.enemy  + BlzGetUnitBaseDamage(firstofgroup)
-                unit.attackrate.enemy  = unit.attackrate.enemy  + BlzGetUnitAttackCooldown(firstofgroup,0)
-                unit.armor.enemy  = unit.armor.enemy  + BlzGetUnitArmor(firstofgroup)
-                GroupRemoveUnit(group.enemy, firstofgroup)
-                GroupAddUnit(Group.Enemy, firstofgroup)
+                unitstats.life.enemy = unitstats.life.enemy + GetUnitState(firstofgroup, UNIT_STATE_LIFE)
+                unitstats.damage.enemy  = unitstats.damage.enemy  + BlzGetUnitBaseDamage(firstofgroup)
+                unitstats.attackrate.enemy  = unitstats.attackrate.enemy  + BlzGetUnitAttackCooldown(firstofgroup,0)
+                unitstats.armor.enemy  = unitstats.armor.enemy  + BlzGetUnitArmor(firstofgroup)
+                GroupRemoveUnit(group.enemy,firstofgroup)
+                GroupAddUnit(Group.Enemy,firstofgroup)
             end
-            GroupEnumUnitsInRange(group.ally, x1, y1, GetUnitRealField(unit, UNIT_RF_SIGHT_RADIUS), NPCStateAttackEnumAllyFilter(faction))
+            GroupEnumUnitsInRangeCounted(group.ally, x, y, BlzGetUnitRealField(unit,UNIT_RF_SIGHT_RADIUS), AllyFilter(), 1)
+            firstofgroup = FirstOfGroup(group.ally)
+            GroupClear(group.ally)
+            x = GetUnitX(firstofgroup)
+            y = GetUnitY(firstofgroup)
+            GroupEnumUnitsInRange(group.ally, x, y, BlzGetUnitRealField(unit,UNIT_RF_SIGHT_RADIUS), AllyFilter())
             for i = 1, CountUnitsInGroup(group.ally) do
                 firstofgroup = FirstOfGroup(group.ally)
-                unit.life.ally = unit.life.ally + GetUnitState(firstofgroup, UNIT_STATE_MAX_LIFE)
-                unit.damage.ally  = unit.damage.ally  + BlzGetUnitBaseDamage(firstofgroup)
-                unit.attackrate.ally  = unit.attackrate.ally  + BlzGetUnitAttackCooldown(firstofgroup,0)
-                unit.armor.ally  = unit.armor.ally  + BlzGetUnitArmor(firstofgroup)
-                GroupRemoveUnit(group.ally, firstofgroup)
+                unitstats.life.ally = unitstats.life.ally + GetUnitState(firstofgroup, UNIT_STATE_LIFE)
+                unitstats.damage.ally  = unitstats.damage.ally  + BlzGetUnitBaseDamage(firstofgroup)
+                unitstats.attackrate.ally  = unitstats.attackrate.ally  + BlzGetUnitAttackCooldown(firstofgroup,0)
+                unitstats.armor.ally  = unitstats.armor.ally  + BlzGetUnitArmor(firstofgroup)
+                GroupRemoveUnit(group.ally,firstofgroup)
+                GroupAddUnit(Group.Ally,firstofgroup)
             end
-            power.enemy = unit.life.ally / (unit.damage.enemy / unit.attackrate.enemy) * ( 1 - unit.armor.ally/100)
-            power.ally = unit.life.enemy / (unit.damage.ally / unit.attackrate.ally) * ( 1 - unit.armor.enemy/100)
-            power.result = (power.enemy * CountUnitsInGroup(Group.Ally)) / (power.ally * CountUnitsInGroup(Group.Enemy))
+            power.enemy = unitstats.life.ally / (unitstats.damage.enemy / unitstats.attackrate.enemy) * ( 1 - unitstats.armor.ally/100)
+            power.ally = unitstats.life.enemy / (unitstats.damage.ally / unitstats.attackrate.ally) * ( 1 - unitstats.armor.enemy/100)
+            power.result = (power.enemy) / (power.ally)
             if power.result >= 0.5 then
-                for i = 1, CountUnitsInGroup(Group.Enemy) do
-                    firstofgroup = FirstOfGroup(Group.Enemy)
-                    GroupRemoveUnit(Group.Enemy, firstofgroup)
-                    SetUnitOwner(firstofgroup, Player(23), false)
-                    SetUnitAcquireRange(firstofgroup, GetUnitRealField(unit, UNIT_RF_SIGHT_RADIUS))
-                    NPC[GetHandleId(firstofgroup)].Current.State = "Attack"
+                for i = 1, CountUnitsInGroup(Group) do
+                    firstofgroup = FirstOfGroup(Group)
+                    GroupRemoveUnit(Group, firstofgroup)
+                    if NPC[GetFilterUnit()].Attitude == "Aggression" then
+                        SetUnitAcquireRange(firstofgroup, GetUnitRealField(unit, UNIT_RF_SIGHT_RADIUS))
+                        NPC[GetHandleId(firstofgroup)].State = "Attack"
+                        SetUnitOwner(firstofgroup,Player(23))
+                    elseif GetOwningPlayer(firstofgroup) ~= Player(0) then
+                        SetUnitAcquireRange(firstofgroup, GetUnitRealField(unit, UNIT_RF_SIGHT_RADIUS))
+                        NPC[GetHandleId(firstofgroup)].State = "Guard"
+                    end
                 end
             end
+            GroupClear(Group)
         end
     end
 
     ---@return boolexpr
-    function NPCStateFilter()
-        return GetOwningPlayer(GetTriggerUnit()) ~= Player(0)
+    function RegisterUnitInRangeFilter()
+        local boolean = {
+            [1] = GetOwningPlayer(GetTriggerUnit()) ~= Player(0),
+            [2] = NPC[GetTriggerUnit()].State == "Walk",
+            [3] = NPC[GetTriggerUnit()].State == "Idle"
+        }
+        return boolean[1] and boolean[2] and boolean[3]
     end
 
     ---@param unit unit
-    function NPCStateRegister(unit)
-        TriggerRegisterUnitInRange(State.Trigger.Create, unit, BlzGetUnitRealField(unit,UNIT_RF_SIGHT_RADIUS), NPCStateFilter())
-        TriggerAddAction(State.Trigger.Create, NPCStateActions(unit))
+    function RegisterUnitInRange(unit)
+        TriggerRegisterUnitInRange(RegisterInRange.Trigger, unit, BlzGetUnitRealField(unit,UNIT_RF_ACQUISITION_RANGE), RegisterUnitInRangeFilter())
+        if RegisterInRange.Action == nil then
+            RegisterInRange.Action = TriggerAddAction(RegisterInRange.Trigger, RegisterUnitInRangeActions())
+        end
     end
 end
 Weather = {
@@ -440,8 +517,6 @@ function InitTrig_Periodic()
 end
 
 function Trig_Melee_Initialization_Actions()
-    AddWeatherEffectSaveLast(GetPlayableMapRect(), FourCC("LRaa"))
-    EnableWeatherEffect(GetLastCreatedWeatherEffect(), true)
     SetTimeOfDay(6.00)
     TriggerSleepAction(1.00)
     EnableTrigger(gg_trg_TimeOfDay)
@@ -480,23 +555,114 @@ end
 
 function InitCustomPlayerSlots()
     SetPlayerStartLocation(Player(0), 0)
+    ForcePlayerStartLocation(Player(0), 0)
     SetPlayerColor(Player(0), ConvertPlayerColor(0))
     SetPlayerRacePreference(Player(0), RACE_PREF_HUMAN)
     SetPlayerRaceSelectable(Player(0), true)
     SetPlayerController(Player(0), MAP_CONTROL_USER)
+    SetPlayerStartLocation(Player(1), 1)
+    ForcePlayerStartLocation(Player(1), 1)
+    SetPlayerColor(Player(1), ConvertPlayerColor(1))
+    SetPlayerRacePreference(Player(1), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(1), true)
+    SetPlayerController(Player(1), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(2), 2)
+    ForcePlayerStartLocation(Player(2), 2)
+    SetPlayerColor(Player(2), ConvertPlayerColor(2))
+    SetPlayerRacePreference(Player(2), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(2), true)
+    SetPlayerController(Player(2), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(3), 3)
+    ForcePlayerStartLocation(Player(3), 3)
+    SetPlayerColor(Player(3), ConvertPlayerColor(3))
+    SetPlayerRacePreference(Player(3), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(3), true)
+    SetPlayerController(Player(3), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(4), 4)
+    ForcePlayerStartLocation(Player(4), 4)
+    SetPlayerColor(Player(4), ConvertPlayerColor(4))
+    SetPlayerRacePreference(Player(4), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(4), true)
+    SetPlayerController(Player(4), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(5), 5)
+    ForcePlayerStartLocation(Player(5), 5)
+    SetPlayerColor(Player(5), ConvertPlayerColor(5))
+    SetPlayerRacePreference(Player(5), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(5), true)
+    SetPlayerController(Player(5), MAP_CONTROL_COMPUTER)
+    SetPlayerStartLocation(Player(23), 6)
+    ForcePlayerStartLocation(Player(23), 6)
+    SetPlayerColor(Player(23), ConvertPlayerColor(23))
+    SetPlayerRacePreference(Player(23), RACE_PREF_HUMAN)
+    SetPlayerRaceSelectable(Player(23), true)
+    SetPlayerController(Player(23), MAP_CONTROL_COMPUTER)
 end
 
 function InitCustomTeams()
     SetPlayerTeam(Player(0), 0)
+    SetPlayerTeam(Player(1), 0)
+    SetPlayerTeam(Player(3), 0)
+    SetPlayerTeam(Player(2), 1)
+    SetPlayerTeam(Player(4), 1)
+    SetPlayerTeam(Player(5), 1)
+    SetPlayerAllianceStateAllyBJ(Player(2), Player(4), true)
+    SetPlayerAllianceStateAllyBJ(Player(2), Player(5), true)
+    SetPlayerAllianceStateAllyBJ(Player(4), Player(2), true)
+    SetPlayerAllianceStateAllyBJ(Player(4), Player(5), true)
+    SetPlayerAllianceStateAllyBJ(Player(5), Player(2), true)
+    SetPlayerAllianceStateAllyBJ(Player(5), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(2), Player(4), true)
+    SetPlayerAllianceStateVisionBJ(Player(2), Player(5), true)
+    SetPlayerAllianceStateVisionBJ(Player(4), Player(2), true)
+    SetPlayerAllianceStateVisionBJ(Player(4), Player(5), true)
+    SetPlayerAllianceStateVisionBJ(Player(5), Player(2), true)
+    SetPlayerAllianceStateVisionBJ(Player(5), Player(4), true)
+    SetPlayerTeam(Player(23), 2)
+end
+
+function InitAllyPriorities()
+    SetEnemyStartLocPrioCount(1, 1)
+    SetEnemyStartLocPrio(1, 0, 5, MAP_LOC_PRIO_LOW)
+    SetStartLocPrioCount(2, 5)
+    SetStartLocPrio(2, 0, 0, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(2, 1, 1, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(2, 2, 4, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(2, 3, 5, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(2, 3)
+    SetEnemyStartLocPrio(2, 0, 3, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(2, 1, 4, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(2, 2, 5, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(3, 4)
+    SetStartLocPrio(3, 0, 0, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(3, 1, 4, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(3, 2, 5, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(3, 3)
+    SetEnemyStartLocPrio(3, 0, 0, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(3, 1, 4, MAP_LOC_PRIO_HIGH)
+    SetEnemyStartLocPrio(3, 2, 5, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(4, 5)
+    SetStartLocPrio(4, 0, 0, MAP_LOC_PRIO_LOW)
+    SetStartLocPrio(4, 1, 1, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(4, 2, 3, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(4, 3, 5, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(4, 3)
+    SetEnemyStartLocPrio(4, 0, 2, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(4, 1, 3, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(5, 1)
+    SetEnemyStartLocPrio(5, 0, 4, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrioCount(6, 2)
+    SetEnemyStartLocPrio(6, 0, 1, MAP_LOC_PRIO_LOW)
+    SetEnemyStartLocPrio(6, 1, 5, MAP_LOC_PRIO_LOW)
 end
 
 function main()
-    SetCameraBounds(-1280.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -1536.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 5376.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 5120.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -1280.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 5120.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 5376.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -1536.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
+    SetCameraBounds(-1280.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -2560.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 9472.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 8192.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -1280.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 8192.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 9472.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -2560.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
     NewSoundEnvironment("Default")
     SetAmbientDaySound("VillageDay")
     SetAmbientNightSound("VillageNight")
     SetMapMusic("Music", true, 0)
+    CreateCameras()
     CreateAllUnits()
     InitBlizzard()
     InitGlobals()
@@ -507,12 +673,18 @@ end
 function config()
     SetMapName("TRIGSTR_003")
     SetMapDescription("TRIGSTR_005")
-    SetPlayers(1)
-    SetTeams(1)
+    SetPlayers(7)
+    SetTeams(7)
     SetGamePlacement(MAP_PLACEMENT_USE_MAP_SETTINGS)
-    DefineStartLocation(0, 1024.0, 64.0)
+    DefineStartLocation(0, 128.0, -576.0)
+    DefineStartLocation(1, 128.0, -576.0)
+    DefineStartLocation(2, 128.0, -576.0)
+    DefineStartLocation(3, 128.0, -576.0)
+    DefineStartLocation(4, 128.0, -576.0)
+    DefineStartLocation(5, 128.0, -576.0)
+    DefineStartLocation(6, 128.0, -576.0)
     InitCustomPlayerSlots()
-    SetPlayerSlotAvailable(Player(0), MAP_CONTROL_USER)
-    InitGenericPlayerSlots()
+    InitCustomTeams()
+    InitAllyPriorities()
 end
 

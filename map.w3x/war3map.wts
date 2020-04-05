@@ -3,11 +3,6 @@
 Player 1
 }
 
-STRING 2
-{
-Force 1
-}
-
 STRING 3
 {
 Iona the Witch
@@ -26,5 +21,45 @@ Nondescript
 STRING 6
 {
 Феникс
+}
+
+STRING 30
+{
+Жители
+}
+
+STRING 31
+{
+Стража
+}
+
+STRING 32
+{
+Путешественники
+}
+
+STRING 33
+{
+Инквизиция
+}
+
+STRING 34
+{
+Гильдия магов
+}
+
+STRING 35
+{
+Разбойники
+}
+
+STRING 36
+{
+Село
+}
+
+STRING 37
+{
+Королевство
 }
 
